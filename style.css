@@ -104,3 +104,23 @@ body {
   background-color: #ffffff;
   color: #396eef;
 }
+
+@media (max-width: 768px) {
+  .checklist {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .checklist__step {
+    width: 100%;
+    margin: 0;
+  }
+
+  .checklist__badge { top: 0; }
+
+  .checklist__info { margin: 0; }
+
+  .checklist__button { margin: 0 auto; }
+}
