@@ -26,14 +26,15 @@ body {
 }
 
 .checklist__step {
+  --step-width: 60px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   font-size: 20px;
-  width: 60px;
-  height: 60px;
+  width: var(--step-width);
+  height: var(--step-width);
   margin-right: 16px;
 }
 
@@ -53,20 +54,17 @@ body {
   fill: transparent;
   stroke: rgba(255, 255, 255, 0.5);
   stroke-width: 1px;
-  r: 48%;
-  cx: 50%;
-  cy: 50%;
+  r: calc(var(--step-width) / 2  - 2px);
 }
 
 .checklist__circle .checklist__progress {
+  --circle-length: calc(2 * 28 * 3.14);
+  --progress: 0.02;
   stroke: white;
   stroke-width: 2px;
   stroke-linecap: round;
-  r: 48%;
-  cx: 50%;
-  cy: 50%;
-  stroke-dasharray: 180;
-  stroke-dashoffset: calc(180 * (1 - var(--progress)));
+  stroke-dasharray: var(--circle-length);
+  stroke-dashoffset: calc(var(--circle-length) * (1 - var(--progress)));
 }
 
 .checklist__info {
